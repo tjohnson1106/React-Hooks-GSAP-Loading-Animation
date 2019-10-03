@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Loader = () => {
+  // reference elements for creating
+  const blue = useRef(null);
+  const red = useRef(null);
+  const yellow = useRef(null);
+  const green = useRef(null);
+
   return (
     <svg viewBox="0 0 150 33.2" width="180" height="150">
-      <circle cx="16.1" cy="16.6" r="16.1" fill="#527abd" />
-      <circle cx="55.2" cy="16.6" r="16.1" fill="#de4431" />
-      <circle cx="94.3" cy="16.6" r="16.1" fill="#f4b61a" />
-      <circle cx="133.4" cy="16.6" r="16.1" fill="#009e52" />
+      <circle ref={blue} cx="16.1" cy="16.6" r="16.1" fill="#527abd" />
+      <circle ref={red} cx="55.2" cy="16.6" r="16.1" fill="#de4431" />
+      <circle ref={yellow} cx="94.3" cy="16.6" r="16.1" fill="#f4b61a" />
+      <circle ref={green} cx="133.4" cy="16.6" r="16.1" fill="#009e52" />
     </svg>
   );
 };
