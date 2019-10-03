@@ -1,11 +1,18 @@
 import React, { useRef } from "react";
+import { TweenMax } from "gsap";
 
 const Loader = () => {
-  // reference elements for creating
   const blue = useRef(null);
   const red = useRef(null);
   const yellow = useRef(null);
   const green = useRef(null);
+
+  TweenMax.fromTo(
+    [red.current, green.current],
+    0.5,
+    { y: -18 },
+    { y: 18, repeat: -1, yoyo: true }
+  );
 
   return (
     <svg viewBox="0 0 150 33.2" width="180" height="150">
