@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { TweenMax } from "gsap";
 
 const Loader = () => {
@@ -7,12 +7,21 @@ const Loader = () => {
   const yellow = useRef(null);
   const green = useRef(null);
 
-  TweenMax.fromTo(
-    [red.current, green.current],
-    0.5,
-    { y: -18 },
-    { y: 18, repeat: -1, yoyo: true }
-  );
+  useEffect(() => {
+    TweenMax.fromTo(
+      [blue.current, yellow.current],
+      0.95,
+      { y: 18 },
+      { y: -18, repeat: -1, yoyo: true }
+    );
+
+    TweenMax.fromTo(
+      [red.current, green.current],
+      0.95,
+      { y: -18 },
+      { y: 18, repeat: -1, yoyo: true }
+    );
+  }, []);
 
   return (
     <svg viewBox="0 0 150 33.2" width="180" height="150">
